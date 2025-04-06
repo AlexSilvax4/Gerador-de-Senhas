@@ -25,77 +25,90 @@ Ideal para criar senhas fortes e seguras com apenas um clique.
 
 ---
 
-## 📷 Captura de Tela
-Importação de bibliotecas
-![image](https://github.com/user-attachments/assets/d1efd42a-68e3-4c2f-ba63-7c020f2cef78)
+## 📷 Capturas de Tela e Explicações
 
-string: Fornece constantes como letras (ascii_letters), números (digits) e símbolos (punctuation) que serão usadas na senha.
+### 📚 Importação de Bibliotecas
+<img src="https://github.com/user-attachments/assets/d1efd42a-68e3-4c2f-ba63-7c020f2cef78" width="500"/>
 
-random: Utilizada para escolher caracteres aleatórios durante a criação da senha.
+- **string**: Fornece constantes como letras (ascii_letters), números (digits) e símbolos (punctuation) que serão usadas na senha.
+- **random**: Utilizada para escolher caracteres aleatórios durante a criação da senha.
+- **tkinter**: Biblioteca nativa do Python para criar janelas gráficas.
+- **messagebox**: Submódulo do tkinter para exibir mensagens pop-up (alertas, erros).
+- **pyperclip**: Permite copiar a senha gerada automaticamente para a área de transferência.
 
-tkinter: Biblioteca nativa do Python para criar janelas gráficas.
+### 🧩 Definição do Conjunto de Caracteres
+<img src="https://github.com/user-attachments/assets/2a97983b-295f-4d0b-8bf7-cae48fa95b28" width="500"/>
 
-messagebox: Submódulo do tkinter para exibir mensagens pop-up (alertas, erros).
+- Letras maiúsculas e minúsculas (ascii_letters)
+- Dígitos de 0 a 9 (digits)
+- Símbolos especiais como @, #, !, etc. (punctuation)
 
-pyperclip: Permite copiar a senha gerada automaticamente para a área de transferência.
+### 🔄 Função `gerar_senha`
+<img src="https://github.com/user-attachments/assets/2fc60eab-7bd4-4f28-917f-9afc4068632d" width="500"/>
 
+- **Parâmetro**: `tamanho` – número de caracteres desejados.
+- Usa uma list comprehension para escolher um caractere aleatório da variável `CARACTERES` para cada posição da senha.
+- `random.choice(CARACTERES)` escolhe um caractere aleatório.
+- `''.join(...)` transforma a lista em uma única string (a senha final).
 
-Definição do Conjunto de Caracteres
-Agrupa:
-![image](https://github.com/user-attachments/assets/2a97983b-295f-4d0b-8bf7-cae48fa95b28)
+### 🛡️ Função `avaliar_forca`
+<img src="https://github.com/user-attachments/assets/29a7ca35-2867-4515-91bb-5f38cf5858b4" width="500"/>
 
-Letras maiúsculas e minúsculas (ascii_letters)
+- Mede a "qualidade" da senha com base em critérios como presença de letras maiúsculas, minúsculas, números e símbolos.
 
-Dígitos de 0 a 9 (digits)
+<img src="https://github.com/user-attachments/assets/0dc4ff4a-f972-4ddd-9eef-73fff0f7ce97" width="500"/>
 
-Símbolos especiais como @, #, !, etc. (punctuation)
+- A variável `pontuacao` soma quantos desses critérios a senha cumpre:
 
-Função gerar_senha
-![image](https://github.com/user-attachments/assets/2fc60eab-7bd4-4f28-917f-9afc4068632d)
-Parâmetro: tamanho – número de caracteres desejados.
+<img src="https://github.com/user-attachments/assets/7a892a37-72ba-48fe-a5ff-fe97d55bf802" width="500"/>
 
-Lógica:
+- Avalia a força:
 
-Usa uma list comprehension para escolher um caractere aleatório da variável CARACTERES para cada posição da senha.
+<img src="https://github.com/user-attachments/assets/44f0f71d-bb2b-44ae-ab40-a87e18817d09" width="500"/>
 
-random.choice(CARACTERES) escolhe um caractere aleatório.
+### 🖱️ Função `ao_clicar`
+<img src="https://github.com/user-attachments/assets/65708cfb-a13a-45b3-a33d-b5d8256f0276" width="500"/>
 
-''.join(...) transforma a lista em uma única string (a senha final).
+- É executada quando o botão “Gerar Senha” é pressionado.
+- Converte a entrada do usuário em inteiro:
 
-Função avaliar_forca
-![image](https://github.com/user-attachments/assets/29a7ca35-2867-4515-91bb-5f38cf5858b4)
-Essa função mede a "qualidade" da senha com base nos seguintes critérios
+<img src="https://github.com/user-attachments/assets/6cb87095-d194-4fc0-8452-03a6f75d661a" width="500"/>
 
-Usa any() para verificar se a senha possui:Letras maiúsculas,Letras minúsculas,Números,Símbolos
-![image](https://github.com/user-attachments/assets/0dc4ff4a-f972-4ddd-9eef-73fff0f7ce97)
+- Gera a senha, exibe na interface e copia para a área de transferência:
 
-A variável pontuacao soma quantos desses critérios a senha cumpre:
-![image](https://github.com/user-attachments/assets/7a892a37-72ba-48fe-a5ff-fe97d55bf802)
+<img src="https://github.com/user-attachments/assets/f2b72a6c-2e6e-464f-982d-6d9f31768cc3" width="500"/>
 
-Avalia a força: ela vai avaliar o quão forte é senha
-![image](https://github.com/user-attachments/assets/44f0f71d-bb2b-44ae-ab40-a87e18817d09)
+- Avalia a força da senha e mostra na interface:
 
+<img src="https://github.com/user-attachments/assets/4dfe142e-1a49-4bcf-8639-7380cdce3c8b" width="500"/>
 
-Função ao_clicar: Essa função é executada quando o botão “Gerar Senha” é pressionado.
-![image](https://github.com/user-attachments/assets/65708cfb-a13a-45b3-a33d-b5d8256f0276)
+- Mostra uma mensagem de confirmação:
 
-Pega o número inserido pelo usuário na interface (entry_tamanho) e converte para inteiro.
-![image](https://github.com/user-attachments/assets/6cb87095-d194-4fc0-8452-03a6f75d661a)
+<img src="https://github.com/user-attachments/assets/a00c05e8-2ba1-4f52-9034-53dd55c12510" width="500"/>
 
-Gera a senha, exibe na interface e copia para a área de transferência.
-![image](https://github.com/user-attachments/assets/f2b72a6c-2e6e-464f-982d-6d9f31768cc3)
+- Caso o usuário digite algo que não seja número, mostra um erro:
 
-Avalia a força da senha e mostra na interface.Avalia a força da senha e mostra na interface.
-![image](https://github.com/user-attachments/assets/4dfe142e-1a49-4bcf-8639-7380cdce3c8b)
+<img src="https://github.com/user-attachments/assets/b2c5f2c6-badd-467c-898b-ea0bfa86f7ef" width="500"/>
 
-Mostra uma mensagem de confirmação.
-![image](https://github.com/user-attachments/assets/a00c05e8-2ba1-4f52-9034-53dd55c12510)
+---
 
-Caso o usuário digite algo que não seja número, mostra um erro.
-![image](https://github.com/user-attachments/assets/b2c5f2c6-badd-467c-898b-ea0bfa86f7ef)
+## 🚀 Como Usar
 
+```bash
 git clone https://github.com/seu-usuario/gerador-senhas.git
 cd gerador-senhas
+pip install pyperclip
+python Gerador_Senha.py
+```
 
+---
 
+## ✍️ Autor
 
+Desenvolvido por **Alex Silvax4**. Sinta-se livre para colaborar ou sugerir melhorias!
+
+---
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Consulte o arquivo `LICENSE` para mais detalhes.
