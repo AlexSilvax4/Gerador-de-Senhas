@@ -26,6 +26,9 @@ Ideal para criar senhas fortes e seguras com apenas um clique.
 ---
 
 ## 📷 Captura de Tela
+![image](https://github.com/user-attachments/assets/d1efd42a-68e3-4c2f-ba63-7c020f2cef78)
+
+
 
 ![Pré-visualização](caminho/para/imagem.png)
 
